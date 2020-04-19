@@ -16,6 +16,11 @@ export const Container = styled.KeyboardAvoidingView.attrs({
 export const Logo = styled.View`
   margin-bottom: 37.5px;
 `;
+
+export const LogoText = styled.Text`
+  color: #ffffff;
+  font-size: 30px;
+`;
 export const Form = styled.View`
   margin-top: 37.5px;
   width: 100%;

@@ -9,7 +9,7 @@ import { signInRequest } from '../../store/modules/courier/actions';
 
 import Background from '../../components/Background';
 
-import { Container, Form, InputStyled, Submit } from './styles';
+import { Container, Form, InputStyled, Submit, LogoText } from './styles';
 
 export default function SignIn({ navigation }) {
   const [id, setId] = useState('');
@@ -23,8 +23,8 @@ export default function SignIn({ navigation }) {
   return (
     <Background>
       <Container>
-        <Image source={logo} width="auto" height="auto" />
-
+        {/* <Image source={logo} width="auto" height="auto" /> */}
+        <LogoText>FASTFEET</LogoText>
         <Form>
           <InputStyled
             icon="mail-outline"

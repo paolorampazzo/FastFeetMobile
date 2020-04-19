@@ -25,6 +25,8 @@ export default function Handout({ data, navigation, route }) {
   const retirada = !!data.start_date;
   const entregue = !!data.end_date;
 
+  const noDate = '--/--/----';
+
   return (
     <Container>
       <Header>
@@ -56,10 +58,12 @@ export default function Handout({ data, navigation, route }) {
         <Detail>
           <DetailHeader>Data</DetailHeader>
           <Texto>
-            {formatToTimeZone(data.start_date, 'DD/MM/YYYY', {
-              timeZone: 'America/Sao_Paulo',
-              locale: pt,
-            })}
+            {data.start_date
+              ? formatToTimeZone(data.start_date, 'DD/MM/YYYY', {
+                  timeZone: 'America/Sao_Paulo',
+                  locale: pt,
+                })
+              : noDate}
           </Texto>
         </Detail>
         <Detail>

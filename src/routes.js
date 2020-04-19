@@ -9,6 +9,7 @@ import Dashboard from './pages/Dashboard';
 import SignIn from './pages/SignIn';
 import Profile from './pages/Profile';
 import Detail from './pages/Detail';
+import Foto from './pages/Foto';
 
 const Stack = createStackNavigator();
 const Tabs = createBottomTabNavigator();
@@ -55,6 +56,35 @@ function NewStack() {
             <TouchableOpacity
               onPress={() => {
                 navigation.navigate('Dashboard');
+              }}
+            >
+              <Icon name="chevron-left" size={30} color="#FFF" />
+            </TouchableOpacity>
+          ),
+        })}
+      />
+      <Stack.Screen
+        name="Detail"
+        component={Foto}
+        options={({ navigation }) => ({
+          title: 'Confirmar entrega',
+          headerLeftContainerStyle: {
+            margin: 'auto',
+            paddingLeft: 30,
+          },
+          headerStyle: {
+            backgroundColor: '#7D40E7',
+            borderBottomColor: 'white',
+            elevation: 0,
+            shadowOpacity: 0,
+          },
+          cardStyle: { backgroundColor: '#FFFFFF' },
+          headerTitleAlign: 'center',
+
+          headerLeft: () => (
+            <TouchableOpacity
+              onPress={() => {
+                navigation.navigate('Detalhes da encomenda');
               }}
             >
               <Icon name="chevron-left" size={30} color="#FFF" />
