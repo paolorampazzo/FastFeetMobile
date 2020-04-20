@@ -22,7 +22,7 @@ import {
 } from './styles';
 
 export default function Detail({ navigation, route }) {
-  function handleConfirm() {}
+  function handleConfirm({ navigation }) {}
 
   const { data } = route.params;
 
@@ -89,19 +89,31 @@ export default function Detail({ navigation, route }) {
           </Datas>
         </Situacao>
         <Buttons>
-          <Button borderright>
+          <Button
+            borderright
+            onPress={() =>
+              navigation.navigate('Informar', { data: { id: data.id } })
+            }
+          >
             <Ant name="closecircleo" size={30} color="#E74040" />
             <ButtonText margtop="5px">Informar</ButtonText>
             <ButtonText>Problema</ButtonText>
           </Button>
-          <Button>
+          <Button
+            onPress={() =>
+              navigation.navigate('Visualizar', { data: { id: data.id } })
+            }
+          >
             <Ant name="infocirlceo" size={30} color="#E7BA40" />
 
             <ButtonText margtop="10px">Visualizar</ButtonText>
             <ButtonText>Problemas</ButtonText>
           </Button>
 
-          <Button borderleft onPress={handleConfirm}>
+          <Button
+            borderleft
+            onPress={() => navigation.navigate('Confirmar', { data })}
+          >
             <Ant name="checkcircleo" size={30} color="#7D40E7" />
             <ButtonText margtop="10px">Confirmar</ButtonText>
             <ButtonText>Entrega</ButtonText>

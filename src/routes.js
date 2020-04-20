@@ -10,6 +10,8 @@ import SignIn from './pages/SignIn';
 import Profile from './pages/Profile';
 import Detail from './pages/Detail';
 import Foto from './pages/Foto';
+import Visualizar from './pages/VisualizarProblema';
+import Informar from './pages/InformarProblema';
 
 const Stack = createStackNavigator();
 const Tabs = createBottomTabNavigator();
@@ -64,7 +66,7 @@ function NewStack() {
         })}
       />
       <Stack.Screen
-        name="Detail"
+        name="Confirmar"
         component={Foto}
         options={({ navigation }) => ({
           title: 'Confirmar entrega',
@@ -84,7 +86,65 @@ function NewStack() {
           headerLeft: () => (
             <TouchableOpacity
               onPress={() => {
-                navigation.navigate('Detalhes da encomenda');
+                navigation.navigate('Detail');
+              }}
+            >
+              <Icon name="chevron-left" size={30} color="#FFF" />
+            </TouchableOpacity>
+          ),
+        })}
+      />
+      <Stack.Screen
+        name="Informar"
+        component={Informar}
+        options={({ navigation }) => ({
+          title: 'Informar problema',
+          headerLeftContainerStyle: {
+            margin: 'auto',
+            paddingLeft: 30,
+          },
+          headerStyle: {
+            backgroundColor: '#7D40E7',
+            borderBottomColor: 'white',
+            elevation: 0,
+            shadowOpacity: 0,
+          },
+          cardStyle: { backgroundColor: '#FFFFFF' },
+          headerTitleAlign: 'center',
+
+          headerLeft: () => (
+            <TouchableOpacity
+              onPress={() => {
+                navigation.navigate('Detail');
+              }}
+            >
+              <Icon name="chevron-left" size={30} color="#FFF" />
+            </TouchableOpacity>
+          ),
+        })}
+      />
+      <Stack.Screen
+        name="Visualizar"
+        component={Visualizar}
+        options={({ navigation }) => ({
+          title: 'Visualizar problemas',
+          headerLeftContainerStyle: {
+            margin: 'auto',
+            paddingLeft: 30,
+          },
+          headerStyle: {
+            backgroundColor: '#7D40E7',
+            borderBottomColor: 'white',
+            elevation: 0,
+            shadowOpacity: 0,
+          },
+          cardStyle: { backgroundColor: '#FFFFFF' },
+          headerTitleAlign: 'center',
+
+          headerLeft: () => (
+            <TouchableOpacity
+              onPress={() => {
+                navigation.navigate('Detail');
               }}
             >
               <Icon name="chevron-left" size={30} color="#FFF" />
